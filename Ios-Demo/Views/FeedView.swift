@@ -22,7 +22,7 @@ struct FeedView: View {
                 } else {
                     LazyVStack(spacing: 12) {
                         ForEach(recipeVM.recipes) { recipe in
-                            RedditStyleRecipeCard(recipe: recipe)
+                            RecipesCard(recipe: recipe)
                                 .padding(.horizontal)
                         }
                     }
@@ -66,7 +66,7 @@ struct FeedView: View {
 }
 
 // MARK: - Reddit-Style Card
-struct RedditStyleRecipeCard: View {
+struct RecipesCard: View {
     let recipe: Recipe
     @EnvironmentObject var recipeVM: RecipeViewModel
     
