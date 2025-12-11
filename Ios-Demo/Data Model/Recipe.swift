@@ -25,3 +25,8 @@ struct Comment: Identifiable {
     let author: String
     let timestamp: Date = Date()
 }
+struct User : Identifiable {
+    let id: String
+    let name: String
+    let email: String
+}
