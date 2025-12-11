@@ -43,7 +43,7 @@ struct PostRecipeView: View {
                             title: title,
                             description: description,
                             imageURL: imageURL,
-                            author: "Current User", // TODO: Use authManager.userName
+                            author: "Suraj", // TODO: Use authManager.userName
                             likes: 0
                         )
                         recipeVM.addRecipe(newRecipe)

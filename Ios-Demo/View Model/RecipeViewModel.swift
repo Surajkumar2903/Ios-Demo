@@ -6,80 +6,101 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseDatabase
 internal import Combine
-
+@MainActor
 class RecipeViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
-    @Published var userRecipes: [Recipe] = [] // For profile
-    
-    init() {
-        loadDummyData()
-    }
-    
-    private func loadDummyData() {
-        // Dummy recipes for feed display
-        let dummyRecipes = [
-            Recipe(
-                title: "Classic Spaghetti Carbonara",
-                description: "Ingredients: Spaghetti, eggs, pancetta, Parmesan cheese, black pepper. Instructions: Boil pasta, mix with egg mixture, add pancetta.",
-                imageURL: nil, // Can add a URL later, e.g., "https://example.com/carbonara.jpg"
-                author: "Chef John",
-                likes: 42
-            ),
-            Recipe(
-                title: "Vegan Avocado Toast",
-                description: "Ingredients: Bread, avocado, lemon, cherry tomatoes, salt. Instructions: Toast bread, mash avocado with lemon, top with tomatoes.",
-                imageURL: nil,
-                author: "HealthyEats",
-                likes: 28
-            ),
-            Recipe(
-                title: "Chocolate Chip Cookies",
-                description: "Ingredients: Flour, butter, sugar, chocolate chips, eggs. Instructions: Mix dry and wet ingredients, bake at 350°F for 10-12 mins.",
-                imageURL: nil,
-                author: "BakerJane",
-                likes: 65
-            ),
-            Recipe(
-                title: "Grilled Cheese Sandwich",
-                description: "Ingredients: Bread, cheese, butter. Instructions: Butter bread, add cheese, grill until golden.",
-                imageURL: nil,
-                author: "QuickMeals",
-                likes: 19
-            ),
-            Recipe(
-                title: "Fresh Garden Salad",
-                description: "Ingredients: Lettuce, tomatoes, cucumber, olive oil, vinegar. Instructions: Chop veggies, toss with dressing.",
-                imageURL: nil,
-                author: "VeggieLover",
-                likes: 37
-            )
-        ]
-        
-        recipes = dummyRecipes
-        // Assume some are user's recipes for profile demo
-        userRecipes = Array(dummyRecipes.prefix(2))
-    }
-    
-    func likeRecipe(id: UUID) {
-        if let index = recipes.firstIndex(where: { $0.id == id }) {
-            recipes[index].isLiked.toggle()
-            recipes[index].likes += recipes[index].isLiked ? 1 : -1
-        }
-        if let index = userRecipes.firstIndex(where: { $0.id == id }) {
-            userRecipes[index].isLiked.toggle()
-            userRecipes[index].likes += userRecipes[index].isLiked ? 1 : -1
+    @Published var userRecipes: [Recipe] = []
+
+    private let db = Firestore.firestore()
+    private let collection = "recipes"
+
+    // MARK: - Fetch All Recipes (Feed)
+    func fetchAllRecipes() async {
+        do {
+            let snapshot = try await db.collection(collection)
+                .order(by: "timestamp", descending: true)
+                .getDocuments()
+
+            self.recipes = snapshot.documents.compactMap { doc in
+                try? doc.data(as: Recipe.self)
+            }
+        } catch {
+            print("Error fetching recipes: \(error)")
         }
     }
-    
+
+    // MARK: - Fetch User Recipes (Profile)
+    func fetchUserRecipes(userName: String) async {
+        do {
+            let snapshot = try await db.collection(collection)
+                .whereField("author", isEqualTo: userName)
+                .order(by: "timestamp", descending: true)
+                .getDocuments()
+
+            self.userRecipes = snapshot.documents.compactMap { doc in
+                try? doc.data(as: Recipe.self)
+            }
+        } catch {
+            print("Error fetching user recipes: \(error)")
+        }
+    }
+
+    // MARK: - Add Recipe
     func addRecipe(_ recipe: Recipe) {
-        recipes.append(recipe)
-        userRecipes.append(recipe)
+        Task {
+            guard let id = recipe.id else { return }
+
+            do {
+                try db.collection(collection)
+                    .document(id)
+                    .setData(from: recipe)
+
+                // Refresh feed & user section
+                await fetchAllRecipes()
+                await fetchUserRecipes(userName: recipe.author)
+
+            } catch {
+                print("Error adding recipe: \(error)")
+            }
+        }
     }
-    
-}
-extension RecipeViewModel {
-    var likedRecipes: Int {
+
+    // MARK: - Like / Unlike Recipe
+    func toggleLike(_ recipe: Recipe) {
+        guard let recipeId = recipe.id else { return }
+        let newLikeState = !recipe.isLiked
+        let newLikeCount = recipe.likes + (newLikeState ? 1 : -1)
+
+        Task {
+            do {
+                try await db.collection(collection)
+                    .document(recipeId)
+                    .updateData([
+                        "likes": newLikeCount
+                    ])
+
+                // Update UI in memory
+                if let index = recipes.firstIndex(where: { $0.id == recipeId }) {
+                    recipes[index].likes = newLikeCount
+                    recipes[index].isLiked = newLikeState
+                }
+
+                if let index = userRecipes.firstIndex(where: { $0.id == recipeId }) {
+                    userRecipes[index].likes = newLikeCount
+                    userRecipes[index].isLiked = newLikeState
+                }
+
+            } catch {
+                print("Error liking/unliking recipe: \(error)")
+            }
+        }
+    }
+
+    // MARK: - Count for Profile Stats
+    var likedRecipesCount: Int {
         recipes.filter { $0.isLiked }.count
     }
 }

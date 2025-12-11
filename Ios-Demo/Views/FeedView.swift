@@ -1,8 +1,8 @@
 //
 //  FeedView.swift
 //  Ios-Demo
-//
 //  Created by Suraj Kumar on 11/12/25.
+
 //
 
 import SwiftUI
@@ -10,10 +10,10 @@ import SwiftUI
 struct FeedView: View {
     @EnvironmentObject var recipeVM: RecipeViewModel
     @State private var showingPostView = false
-    
+
     private let accentOrange = Color.orange
     private let lightOrange = Color.orange.opacity(0.15)
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -45,10 +45,15 @@ struct FeedView: View {
             }
             .sheet(isPresented: $showingPostView) {
                 PostRecipeView()
+                    .environmentObject(recipeVM)
+            }
+            .task {
+                // load from Firebase
+                await recipeVM.fetchAllRecipes()
             }
         }
     }
-    
+
     var emptyState: some View {
         VStack(spacing: 16) {
             Image(systemName: "tray.fill")
@@ -69,12 +74,13 @@ struct FeedView: View {
 struct RecipesCard: View {
     let recipe: Recipe
     @EnvironmentObject var recipeVM: RecipeViewModel
-    
+
     private let accentOrange = Color.orange
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Header: Author + Time ago
+
+            // MARK: - Header
             HStack(spacing: 8) {
                 Circle()
                     .fill(accentOrange)
@@ -85,96 +91,93 @@ struct RecipesCard: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     )
-                
+
                 VStack(alignment: .leading, spacing: 2) {
                     Text(recipe.author)
                         .font(.subheadline)
                         .fontWeight(.semibold)
-                    Text("2 hours ago")
+                    Text("Just now")       // Replace with real timestamp later
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
-                
+
                 Spacer()
-                
             }
             .padding(.horizontal)
             .padding(.top, 12)
-            
-            // Title
+
+            // MARK: - Title
             Text(recipe.title)
                 .font(.title3)
                 .fontWeight(.bold)
                 .foregroundColor(accentOrange)
                 .padding(.horizontal)
                 .padding(.top, 8)
-            
-            // Description (preview)
+
+            // MARK: - Description preview
             Text(recipe.description)
                 .font(.body)
                 .foregroundColor(.primary)
                 .lineLimit(4)
                 .padding(.horizontal)
                 .padding(.top, 6)
-            
-            // Image (if exists)
-            if let imageURL = recipe.imageURL, let url = URL(string: imageURL) {
+
+            // MARK: - Image
+            if let urlString = recipe.imageURL,
+               let url = URL(string: urlString) {
+
                 AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
+                    if let image = phase.image {
+                        image.resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(maxHeight: 300)
                             .clipped()
-                    case .empty:
-                        placeholderImage
-                    case .failure:
-                        placeholderImage
-                    @unknown default:
+                    } else {
                         placeholderImage
                     }
                 }
                 .cornerRadius(12)
                 .padding(.horizontal)
                 .padding(.top, 10)
+
             } else {
                 placeholderImage
                     .padding(.horizontal)
                     .padding(.top, 10)
             }
-            
+
+            // MARK: - Interactions
             HStack(spacing: 20) {
+
+                // LIKE BUTTON (Updated)
                 HStack(spacing: 8) {
                     Button {
                         withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                            recipeVM.likeRecipe(id: recipe.id)
+                            recipeVM.toggleLike(recipe)
                         }
                     } label: {
                         Image(systemName: recipe.isLiked ? "heart.fill" : "heart")
                             .font(.title2)
                             .foregroundColor(recipe.isLiked ? .red : .black)
                     }
-                    
+
                     Text("\(recipe.likes)")
                         .font(.subheadline)
                         .fontWeight(.medium)
-                        .foregroundColor(recipe.isLiked ? .red :
-                                .black)
+                        .foregroundColor(recipe.isLiked ? .red : .black)
                 }
-                
-                // Comments
+
+                // COMMENTS COUNT (Static for now)
                 HStack(spacing: 6) {
                     Image(systemName: "message")
                         .font(.title2)
                         .foregroundColor(.black)
+
                     Text("\(recipe.comments.count)")
                         .font(.subheadline)
                         .foregroundColor(.primary)
                 }
-                
-            
-                
+
                 Spacer()
             }
             .padding(.horizontal)
@@ -183,10 +186,8 @@ struct RecipesCard: View {
         .background(Color(.systemBackground))
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.08), radius: 10, x: 0, y: 4)
-        .onTapGesture {
-        }
     }
-    
+
     private var placeholderImage: some View {
         Rectangle()
             .fill(Color.orange.opacity(0.2))
