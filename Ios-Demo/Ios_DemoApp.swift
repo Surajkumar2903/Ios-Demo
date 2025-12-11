@@ -25,7 +25,7 @@ struct Ios_DemoApp: App {
         WindowGroup {
             NavigationView {
                             if authManager.isUserLoggedIn {
-                                HomeView()
+                                ContentView()
                             } else {
                                 SignInView()
                             }

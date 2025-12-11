@@ -11,80 +11,62 @@ internal import Combine
 
 class AuthManager: NSObject, ObservableObject {
 
-    // MARK: - Properties
-
     @Published var isUserLoggedIn = false
-
-    // MARK: - Initialization
+    
+    // ADD THESE TWO LINES ONLY
+    @Published var currentUserEmail: String = ""
+    @Published var currentUserDisplayName: String = "User"
+    
+    private var handle: AuthStateDidChangeListenerHandle?
 
     override init() {
         super.init()
         setupAuthStateChangeListener()
     }
 
-    // MARK: - Methods
-
-    // MARK: Auth State Change Listener
-
-    /// Sets up the authentication state change listener to track user login status.
     private func setupAuthStateChangeListener() {
-        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+        handle = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             guard let self = self else { return }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self.isUserLoggedIn = user != nil
+            
+            if let user = user {
+                self.isUserLoggedIn = true
+                self.currentUserEmail = user.email ?? "No email"
+                // Use email prefix or "User" if no displayName
+                self.currentUserDisplayName = user.displayName ??
+                    user.email?.components(separatedBy: "@").first?.capitalized ?? "User"
+            } else {
+                self.isUserLoggedIn = false
+                self.currentUserEmail = ""
+                self.currentUserDisplayName = "User"
             }
         }
     }
 
-    // MARK: Sign Out
-
-    /// Signs out the current user.
-    /// - Parameter completion: Closure called upon completion with an optional error.
     func signOut(completion: @escaping (Error?) -> Void) {
         do {
             try Auth.auth().signOut()
             completion(nil)
-        } catch let signOutError as NSError {
-            completion(signOutError)
+        } catch {
+            completion(error)
         }
     }
-}
 
-// MARK: - Account Creation and Sign In
-
-extension AuthManager {
-
-    // MARK: Create Account
-
-    /// Creates a new user account with the provided email and password.
-    /// - Parameters:
-    ///   - email: User's email address.
-    ///   - password: User's desired password.
-    ///   - completion: Closure called upon completion with an optional error.
+    // Your existing createAccount & signInWithEmail methods stay 100% unchanged
     func createAccount(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(error)
-            } else {
-                completion(nil)
-            }
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+            completion(error)
         }
     }
 
-    // MARK: Sign In with Email and Password
-
-    /// Signs in the user with the provided email and password.
-    /// - Parameters:
-    ///   - email: User's email address.
-    ///   - password: User's password.
-    ///   - completion: Closure called upon completion with an optional error.
     func signInWithEmail(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(error)
-            } else {
-                completion(nil)
-            }
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
+            completion(error)
+        }
+    }
+
+    deinit {
+        if let handle = handle {
+            Auth.auth().removeStateDidChangeListener(handle)
         }
     }
 }

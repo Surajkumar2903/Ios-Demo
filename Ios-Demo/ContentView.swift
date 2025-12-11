@@ -7,18 +7,42 @@
 
 import SwiftUI
 
+// ContentView.swift
 struct ContentView: View {
+    @EnvironmentObject var authManager: AuthManager
+    @StateObject private var recipeVM = RecipeViewModel()
+
+    private let accentOrange = Color.orange
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            FeedView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+
+            SearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
         }
-        .padding()
+        .accentColor(accentOrange)
+        .environmentObject(recipeVM)
     }
 }
 
-#Preview {
-    ContentView()
+// MARK: - Preview
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(AuthManager())
+    }
 }
