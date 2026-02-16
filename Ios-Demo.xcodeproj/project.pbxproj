@@ -31,6 +31,7 @@
 		17D1685A2EEAAC090069BC12 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 17D168592EEAAC090069BC12 /* FirebaseRemoteConfig */; };
 		17D1685C2EEAAC090069BC12 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 17D1685B2EEAAC090069BC12 /* FirebaseStorage */; };
 		17D1685E2EEAAC090069BC12 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 17D1685D2EEAAC090069BC12 /* FirebaseStorageCombine-Community */; };
+		17FB53842F42F60B000608A7 /* AppStorys_iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 17FB53832F42F60B000608A7 /* AppStorys_iOS */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 				17D1683A2EEAAC090069BC12 /* FirebaseAppCheck in Frameworks */,
 				17D168362EEAAC090069BC12 /* FirebaseAnalyticsCore in Frameworks */,
 				17D1684C2EEAAC090069BC12 /* FirebaseFunctions in Frameworks */,
+				17FB53842F42F60B000608A7 /* AppStorys_iOS in Frameworks */,
 				17D1683E2EEAAC090069BC12 /* FirebaseAuth in Frameworks */,
 				17D1684A2EEAAC090069BC12 /* FirebaseFirestoreCombine-Community in Frameworks */,
 			);
@@ -140,6 +142,7 @@
 				17D168592EEAAC090069BC12 /* FirebaseRemoteConfig */,
 				17D1685B2EEAAC090069BC12 /* FirebaseStorage */,
 				17D1685D2EEAAC090069BC12 /* FirebaseStorageCombine-Community */,
+				17FB53832F42F60B000608A7 /* AppStorys_iOS */,
 			);
 			productName = "Ios-Demo";
 			productReference = 17D168162EEAA5770069BC12 /* Ios-Demo.app */;
@@ -171,6 +174,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				17FB53822F42F60B000608A7 /* XCRemoteSwiftPackageReference "AppStorys-Latest-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17D168172EEAA5770069BC12 /* Products */;
@@ -418,6 +422,14 @@
 				minimumVersion = 12.7.0;
 			};
 		};
+		17FB53822F42F60B000608A7 /* XCRemoteSwiftPackageReference "AppStorys-Latest-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appversal/AppStorys-Latest-iOS.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -540,6 +552,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		17FB53832F42F60B000608A7 /* AppStorys_iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17FB53822F42F60B000608A7 /* XCRemoteSwiftPackageReference "AppStorys-Latest-iOS" */;
+			productName = AppStorys_iOS;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

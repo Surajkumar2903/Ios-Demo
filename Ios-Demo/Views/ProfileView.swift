@@ -4,7 +4,7 @@
 //
 //  Created by Suraj Kumar on 11/12/25.
 import SwiftUI
-
+import AppStorys_iOS
 struct ProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var recipeVM: RecipeViewModel

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppStorys_iOS
 
 struct SearchView: View {
     @EnvironmentObject var recipeVM: RecipeViewModel
