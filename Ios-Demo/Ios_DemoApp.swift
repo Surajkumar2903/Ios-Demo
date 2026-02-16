@@ -33,8 +33,8 @@ struct Ios_DemoApp: App {
                                     .withAppStorysOverlays()
                                     .task {
                                         AppStorys.initialize(
-                                            accountID: "12a9eac5-94ee-4735-9aa6-b8a94cb8fbbb",
-                                            appID: "f69bdccf-b20f-4938-b39e-7075d76db791",
+                                            accountID: "4350bf8e-0c9a-46bd-b953-abb65ab21d11",
+                                            appID: "9e1b21a2-350a-4592-918c-2a19a73f249a",
                                             userID: "Suraj_SDK_V1"
                                         )
                                     }

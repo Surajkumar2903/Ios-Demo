@@ -35,7 +35,7 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
-        .trackAppStorysScreen("Story_Camp")
+        .trackAppStorysScreen("Home Screen iOS")
         .accentColor(accentOrange)
         .environmentObject(recipeVM)
     }
