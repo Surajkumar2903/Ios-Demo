@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import AppStorys_iOS
 struct FeedView: View {
     @EnvironmentObject var recipeVM: RecipeViewModel
     @State private var showingPostView = false
@@ -17,6 +17,8 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                AppStorys.Stories()
+                
                 if recipeVM.recipes.isEmpty {
                     emptyState
                 } else {
@@ -52,6 +54,10 @@ struct FeedView: View {
                 await recipeVM.fetchAllRecipes()
             }
         }
+        .withAppStorysOverlays()
+        .captureAppStorysTag("Home Screen iOS")
+      
+        
     }
 
     var emptyState: some View {

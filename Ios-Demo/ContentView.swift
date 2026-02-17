@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppStorys_iOS
 
 // ContentView.swift
 struct ContentView: View {
@@ -34,6 +35,7 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
+        .trackAppStorysScreen("Home Screen iOS")
         .accentColor(accentOrange)
         .environmentObject(recipeVM)
     }
