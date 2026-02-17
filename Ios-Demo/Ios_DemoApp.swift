@@ -30,7 +30,7 @@ struct Ios_DemoApp: App {
                                     .withAppStorysOverlays()
                                     .task {
                                         AppStorysLogger.logLevel = .debug
-                                                          //  AppStorys.enableTestMode()
+                                                           AppStorys.enableTestMode()
                                                             AppStorys.initialize(
                                                                 ///test credentials
                                                                 accountID: "12a9eac5-94ee-4735-9aa6-b8a94cb8fbbb",
