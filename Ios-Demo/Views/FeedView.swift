@@ -54,8 +54,9 @@ struct FeedView: View {
                 await recipeVM.fetchAllRecipes()
             }
         }
-        .withAppStorysOverlays()
+        
         .captureAppStorysTag("Home Screen iOS")
+        .withAppStorysOverlays()
       
         
     }

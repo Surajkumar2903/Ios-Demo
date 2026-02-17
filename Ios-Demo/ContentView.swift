@@ -22,6 +22,7 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
+                //.captureAppStorysTag("Home Screen iOS")
 
             SearchView()
                 .tabItem {
