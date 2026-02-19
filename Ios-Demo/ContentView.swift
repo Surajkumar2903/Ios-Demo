@@ -21,7 +21,11 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
+                        
                 }
+            .trackAppStorysScreen("Suraj Home Screen iOS")
+               // .trackAppStorysScreen("iOS Tab View")
+
 
             SearchView()
                 .tabItem {
@@ -35,8 +39,8 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
-        .trackAppStorysScreen("Home Screen iOS")
-        
+    // .trackAppStorysScreen("Suraj iOS Tab View")
+//
         .accentColor(accentOrange)
         .environmentObject(recipeVM)
     }

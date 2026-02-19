@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AppStorys_iOS
+internal import Lottie
 struct FeedView: View {
     @EnvironmentObject var recipeVM: RecipeViewModel
     @State private var showingPostView = false
@@ -18,7 +19,9 @@ struct FeedView: View {
         NavigationStack {
             ScrollView {
                 AppStorys.Stories()
-                
+                AppStorys.Widgets(position: "Suraj_second_Widget")
+                .captureAppStorysWidgetTag("Suraj_second_Widget")
+                    
                 if recipeVM.recipes.isEmpty {
                     emptyState
                 } else {
@@ -43,7 +46,9 @@ struct FeedView: View {
                             .font(.title2)
                             .foregroundStyle(accentOrange)
                     }
+                    .captureAppStorysTag("Suraj Home Screen iOS")
                 }
+                
             }
             .sheet(isPresented: $showingPostView) {
                 PostRecipeView()
@@ -54,8 +59,12 @@ struct FeedView: View {
                 await recipeVM.fetchAllRecipes()
             }
         }
-        .captureAppStorysTag("Home Screen iOS")
-        .withAppStorysOverlays()
+      //  .trackAppStorysScreen("Suraj Home Screen iOS")
+        
+//MARK: Capture tag only work for capturning screen name 
+       // .captureAppStorysTag("iOS Tab View")
+       // .captureAppStorysTag("Home Screen iOS")
+       // .withAppStorysOverlays()
       
         
     }

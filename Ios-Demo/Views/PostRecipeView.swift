@@ -7,7 +7,7 @@
 
 
 import SwiftUI
-
+import AppStorys_iOS
 struct PostRecipeView: View {
     @EnvironmentObject var recipeVM: RecipeViewModel
     @Environment(\.dismiss) var dismiss
@@ -35,6 +35,7 @@ struct PostRecipeView: View {
                     ))
                 }
             }
+           // .trackAppStorysScreen("Suraj Home Screen iOS")
             .navigationTitle("Post Recipe")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -53,7 +54,11 @@ struct PostRecipeView: View {
                     .foregroundColor(accentOrange)
                 }
             }
+           // .trackAppStorysScreen("Suraj Home Screen iOS")
         }
+      
+
+
     }
 }
 
