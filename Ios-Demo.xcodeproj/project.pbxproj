@@ -171,7 +171,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				1747155A2F445E0C0000F90E /* XCLocalSwiftPackageReference "../../Downloads/iOSSDK-Downgraded-15-main" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17D168172EEAA5770069BC12 /* Products */;
@@ -409,13 +408,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		1747155A2F445E0C0000F90E /* XCLocalSwiftPackageReference "../../Downloads/iOSSDK-Downgraded-15-main" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../Downloads/iOSSDK-Downgraded-15-main";
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
