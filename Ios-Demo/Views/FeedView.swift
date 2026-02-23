@@ -169,13 +169,13 @@ struct RecipesCard: View {
 
                 // COMMENTS COUNT (Static for now)
                 HStack(spacing: 6) {
-                    Image(systemName: "message")
-                        .font(.title2)
-                        .foregroundColor(.black)
-
-                    Text("\(recipe.comments.count)")
-                        .font(.subheadline)
-                        .foregroundColor(.primary)
+//                    Image(systemName: "message")
+//                        .font(.title2)
+//                        .foregroundColor(.black)
+//
+//                    Text("\(recipe.comments.count)")
+//                        .font(.subheadline)
+//                        .foregroundColor(.primary)
                 }
 
                 Spacer()
