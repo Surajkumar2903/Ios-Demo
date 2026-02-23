@@ -19,8 +19,9 @@ struct FeedView: View {
         NavigationStack {
             ScrollView {
                 AppStorys.Stories()
-                AppStorys.Widgets(position: "Suraj_second_Widget")
-                .captureAppStorysWidgetTag("Suraj_second_Widget")
+                AppStorys.Widgets()
+//                AppStorys.Widgets(position: "Suraj_second_Widget")
+//                .captureAppStorysWidgetTag("Suraj_second_Widget")
                     
                 if recipeVM.recipes.isEmpty {
                     emptyState

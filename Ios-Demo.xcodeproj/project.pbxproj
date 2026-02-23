@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172B71762F49900E00DB8C23 /* AppStorys_iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 172B71752F49900E00DB8C23 /* AppStorys_iOS */; };
 		17D168302EEAAC090069BC12 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 17D1682F2EEAAC090069BC12 /* FirebaseAI */; };
 		17D168322EEAAC090069BC12 /* FirebaseAILogic in Frameworks */ = {isa = PBXBuildFile; productRef = 17D168312EEAAC090069BC12 /* FirebaseAILogic */; };
 		17D168342EEAAC090069BC12 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 17D168332EEAAC090069BC12 /* FirebaseAnalytics */; };
@@ -72,6 +73,7 @@
 				17D1683A2EEAAC090069BC12 /* FirebaseAppCheck in Frameworks */,
 				17D168362EEAAC090069BC12 /* FirebaseAnalyticsCore in Frameworks */,
 				17D1684C2EEAAC090069BC12 /* FirebaseFunctions in Frameworks */,
+				172B71762F49900E00DB8C23 /* AppStorys_iOS in Frameworks */,
 				17D1683E2EEAAC090069BC12 /* FirebaseAuth in Frameworks */,
 				17D1684A2EEAAC090069BC12 /* FirebaseFirestoreCombine-Community in Frameworks */,
 			);
@@ -140,6 +142,7 @@
 				17D168592EEAAC090069BC12 /* FirebaseRemoteConfig */,
 				17D1685B2EEAAC090069BC12 /* FirebaseStorage */,
 				17D1685D2EEAAC090069BC12 /* FirebaseStorageCombine-Community */,
+				172B71752F49900E00DB8C23 /* AppStorys_iOS */,
 			);
 			productName = "Ios-Demo";
 			productReference = 17D168162EEAA5770069BC12 /* Ios-Demo.app */;
@@ -171,6 +174,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				172B71742F49900E00DB8C23 /* XCLocalSwiftPackageReference "../../Documents/iOSSDK-Downgraded-15-main" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17D168172EEAA5770069BC12 /* Products */;
@@ -409,6 +413,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		172B71742F49900E00DB8C23 /* XCLocalSwiftPackageReference "../../Documents/iOSSDK-Downgraded-15-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Documents/iOSSDK-Downgraded-15-main";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -421,6 +432,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		172B71752F49900E00DB8C23 /* AppStorys_iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppStorys_iOS;
+		};
 		17D1682F2EEAAC090069BC12 /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 17D1682E2EEAAC090069BC12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
