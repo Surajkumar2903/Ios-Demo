@@ -4,17 +4,18 @@
 //
 //  Created by Suraj Kumar on 11/12/25.
 import SwiftUI
-
 struct ProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var recipeVM: RecipeViewModel
+    
+    @State private var showFeedbackSheet = false     // ← new
     
     private let accentOrange = Color.orange
     
     var body: some View {
         NavigationStack {
             List {
-                // User Info Header (Apple Health Style)
+                // User Info Header (unchanged)
                 Section {
                     HStack(spacing: 16) {
                         Circle()
@@ -43,7 +44,7 @@ struct ProfileView: View {
                     .padding(.vertical, 8)
                 }
                 
-                // My Content
+                // My Content (unchanged)
                 Section("My Content") {
                     NavigationLink(destination: MyRecipesView()) {
                         Label {
@@ -74,7 +75,17 @@ struct ProfileView: View {
                     }
                 }
                 
-                // Sign Out
+                // ← Add new section or just a button row
+                Section {
+                    Button {
+                        showFeedbackSheet = true
+                    } label: {
+                        Label("Help Improve the App", systemImage: "questionmark.circle")
+                            .foregroundColor(accentOrange)
+                    }
+                }
+                
+                // Sign Out (unchanged)
                 Section {
                     Button(role: .destructive) {
                         authManager.signOut { _ in }
@@ -91,15 +102,13 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.large)
+            
+            // The survey sheet
+            .sheet(isPresented: $showFeedbackSheet) {
+                FeedbackSurveyView()
+                    .presentationDetents([.height(600)])   // like many feedback popups
+                    .presentationDragIndicator(.visible)
+            }
         }
-    }
-}
-
-// MARK: - Previews
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-            .environmentObject(AuthManager())
-            .environmentObject(RecipeViewModel())
     }
 }

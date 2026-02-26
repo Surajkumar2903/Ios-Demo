@@ -23,7 +23,8 @@ struct ContentView: View {
                     Text("Home")
                         
                 }
-            .trackAppStorysScreen("Suraj Home Screen iOS")
+             //   .trackAppStorysScreen("Home Screen Kotlin")
+           .trackAppStorysScreen("Suraj Home Screen iOS")
                // .trackAppStorysScreen("iOS Tab View")
 
 

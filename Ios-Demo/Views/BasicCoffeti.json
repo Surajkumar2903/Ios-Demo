@@ -1,0 +1,841 @@
+ {
+    "campaign_type": "STW",
+    "client_id": "12a9eac5-94ee-4735-9aa6-b8a94cb8fbbb",
+    "details": {
+      "availableSpins": 2,
+      "content": {
+        "availableSpinsText": "Spins left",
+        "rewardConfiguration": {
+          "rewardEnableBackdrop": true,
+          "rewardPopupDescription": "Kya mila",
+          "rewardPopupTitle": "Dekho"
+        },
+        "userInteraction": {
+          "hapticFeedback": true
+        },
+        "wheelConfiguration": {
+          "spinDirection": "clockwise",
+          "totalSliceCount": 4
+        }
+      },
+      "enableBackdrop": true,
+      "id": "62afe39e-6e89-43a8-b337-91ed56e44381",
+      "popupDescription": "Try your chance",
+      "popupTitle": "Spin it to win it",
+      "rewardDisplayMode": "full-screen",
+      "slices": [
+        {
+          "id": "67ce1560-a42c-4e09-8b64-0b59a18d1ee1",
+          "noPrize": false,
+          "parent": "62afe39e-6e89-43a8-b337-91ed56e44381",
+          "prizeLabel": "Buggati",
+          "rewards": [
+            {
+              "buttonCta": "Claim",
+              "couponCode": "sdfs",
+              "id": "6b640525-610e-404b-8d03-bd9e9dc720cd",
+              "link": "https://google.com",
+              "prizeName": "fsdfds",
+              "sliceId": "67ce1560-a42c-4e09-8b64-0b59a18d1ee1",
+              "sliceRewardMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/slice_rewards/WhatsApp_Image_2026-02-19_at_12.13.03_PM.jpeg",
+              "styling": {
+                "couponCodeCta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#FFF7ED",
+                    "borderColor": "#fd5f03",
+                    "borderWidth": 1,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 200,
+                    "height": 40
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 8,
+                    "bottomRight": 8,
+                    "topLeft": 8,
+                    "topRight": 8
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#fd5f03",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "monospace",
+                    "fontSize": 11
+                  }
+                },
+                "cta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#2563EB",
+                    "borderColor": "#2563EB",
+                    "borderWidth": 2,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 120,
+                    "height": 48
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 12,
+                    "bottomRight": 12,
+                    "topLeft": 12,
+                    "topRight": 12
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#FFFFFF",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 15
+                  }
+                },
+                "priceLabel": {
+                  "textStyle": {
+                    "color": "#000000",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 18,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                },
+                "subtitleText": {
+                  "textStyle": {
+                    "color": "#666666",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 14,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                }
+              },
+              "subText": "sdfds",
+              "tNcCta": "Know more to claim",
+              "termsNConditions": ""
+            }
+          ],
+          "sliceMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/wheel_slices/images-3.jpeg",
+          "styling": {
+            "wheelStyling": {
+              "color": {
+                "background": "#A855F7",
+                "stroke": "#A855F7"
+              },
+              "cornerRadius": {
+                "bottomLeft": 0,
+                "bottomRight": 0,
+                "topLeft": 0,
+                "topRight": 0
+              },
+              "image": {
+                "cornerRadius": {
+                  "bottomLeft": 12,
+                  "bottomRight": 12,
+                  "topLeft": 12,
+                  "topRight": 12
+                },
+                "rotation": 0
+              },
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "priceLabel": {
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textStyle": {
+                  "color": "#FFFFFF",
+                  "fontSize": 12
+                }
+              },
+              "strokeWidth": 2
+            }
+          },
+          "weight": 50
+        },
+        {
+          "id": "6cdf1020-350c-4fbd-9c7e-08c24a0d0f8b",
+          "noPrize": false,
+          "parent": "62afe39e-6e89-43a8-b337-91ed56e44381",
+          "prizeLabel": "Nano",
+          "rewards": [
+            {
+              "buttonCta": "gbd",
+              "couponCode": "gfbd",
+              "id": "89c141fb-cc34-4fbb-960c-e3a259a8311a",
+              "link": "https://google.com",
+              "prizeName": "sdfs",
+              "sliceId": "6cdf1020-350c-4fbd-9c7e-08c24a0d0f8b",
+              "sliceRewardMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/slice_rewards/DXB-Website-Photos-v1-57.png",
+              "styling": {
+                "couponCodeCta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#FFF7ED",
+                    "borderColor": "#fd5f03",
+                    "borderWidth": 1,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 200,
+                    "height": 40
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 8,
+                    "bottomRight": 8,
+                    "topLeft": 8,
+                    "topRight": 8
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#fd5f03",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "monospace",
+                    "fontSize": 11
+                  }
+                },
+                "cta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#2563EB",
+                    "borderColor": "#2563EB",
+                    "borderWidth": 2,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 120,
+                    "height": 48
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 12,
+                    "bottomRight": 12,
+                    "topLeft": 12,
+                    "topRight": 12
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#FFFFFF",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 15
+                  }
+                },
+                "priceLabel": {
+                  "textStyle": {
+                    "color": "#000000",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 18,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                },
+                "subtitleText": {
+                  "textStyle": {
+                    "color": "#666666",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 14,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                }
+              },
+              "subText": "rhb",
+              "tNcCta": "Know more to claim",
+              "termsNConditions": "vsc"
+            }
+          ],
+          "sliceMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/wheel_slices/WhatsApp_Image_2026-02-19_at_12.13.03_PM.jpeg",
+          "styling": {
+            "wheelStyling": {
+              "color": {
+                "background": "#3B82F6",
+                "stroke": "#3B82F6"
+              },
+              "cornerRadius": {
+                "bottomLeft": 0,
+                "bottomRight": 0,
+                "topLeft": 0,
+                "topRight": 0
+              },
+              "image": {
+                "cornerRadius": {
+                  "bottomLeft": 12,
+                  "bottomRight": 12,
+                  "topLeft": 12,
+                  "topRight": 12
+                },
+                "rotation": 0
+              },
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "priceLabel": {
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textStyle": {
+                  "color": "#FFFFFF",
+                  "fontSize": 12
+                }
+              },
+              "strokeWidth": 2
+            }
+          },
+          "weight": 50
+        },
+        {
+          "id": "99ef6e27-59c3-407e-a1f9-43d319b16f6d",
+          "noPrize": false,
+          "parent": "62afe39e-6e89-43a8-b337-91ed56e44381",
+          "prizeLabel": "Thar",
+          "rewards": [
+            {
+              "buttonCta": "fnfh",
+              "couponCode": "gnfn",
+              "id": "b16f47f8-2cca-4b1f-83d5-f1629bc48d54",
+              "link": "https://google.com",
+              "prizeName": "sv",
+              "sliceId": "99ef6e27-59c3-407e-a1f9-43d319b16f6d",
+              "sliceRewardMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/slice_rewards/Acupressure-Points-for-Hair-Growth.jpg",
+              "styling": {
+                "couponCodeCta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#FFF7ED",
+                    "borderColor": "#fd5f03",
+                    "borderWidth": 1,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 200,
+                    "height": 40
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 8,
+                    "bottomRight": 8,
+                    "topLeft": 8,
+                    "topRight": 8
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#fd5f03",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "monospace",
+                    "fontSize": 11
+                  }
+                },
+                "cta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#2563EB",
+                    "borderColor": "#2563EB",
+                    "borderWidth": 2,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 120,
+                    "height": 48
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 12,
+                    "bottomRight": 12,
+                    "topLeft": 12,
+                    "topRight": 12
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#FFFFFF",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 15
+                  }
+                },
+                "priceLabel": {
+                  "textStyle": {
+                    "color": "#000000",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 18,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                },
+                "subtitleText": {
+                  "textStyle": {
+                    "color": "#666666",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 14,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                }
+              },
+              "subText": "dsgf",
+              "tNcCta": "Know more to claimnhn",
+              "termsNConditions": "nh"
+            }
+          ],
+          "sliceMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/wheel_slices/Health-GettyImages-1314942804-9d5921c70058438ea6397a1b12f61455.jpg",
+          "styling": {
+            "wheelStyling": {
+              "color": {
+                "background": "#10B981",
+                "stroke": "#10B981"
+              },
+              "cornerRadius": {
+                "bottomLeft": 0,
+                "bottomRight": 0,
+                "topLeft": 0,
+                "topRight": 0
+              },
+              "image": {
+                "cornerRadius": {
+                  "bottomLeft": 12,
+                  "bottomRight": 12,
+                  "topLeft": 12,
+                  "topRight": 12
+                },
+                "rotation": 0
+              },
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "priceLabel": {
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textStyle": {
+                  "color": "#FFFFFF",
+                  "fontSize": 12
+                }
+              },
+              "strokeWidth": 2
+            }
+          },
+          "weight": 50
+        },
+        {
+          "id": "21f8d615-90ed-4136-996c-a48c10f8595f",
+          "noPrize": false,
+          "parent": "62afe39e-6e89-43a8-b337-91ed56e44381",
+          "prizeLabel": "BMW",
+          "rewards": [
+            {
+              "buttonCta": "Abhi claim",
+              "couponCode": "123456",
+              "id": "cde6c1e1-46bd-4ece-93fd-10ca0456afec",
+              "link": "https://google.com",
+              "prizeName": "Good gift",
+              "sliceId": "21f8d615-90ed-4136-996c-a48c10f8595f",
+              "sliceRewardMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/slice_rewards/WhatsApp_Image_2026-02-19_at_12.13.03_PM.jpeg",
+              "styling": {
+                "couponCodeCta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#FFF7ED",
+                    "borderColor": "#fd5f03",
+                    "borderWidth": 1,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 200,
+                    "height": 40
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 8,
+                    "bottomRight": 8,
+                    "topLeft": 8,
+                    "topRight": 8
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#fd5f03",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "monospace",
+                    "fontSize": 11
+                  }
+                },
+                "cta": {
+                  "container": {
+                    "alignment": "center",
+                    "backgroundColor": "#2563EB",
+                    "borderColor": "#2563EB",
+                    "borderWidth": 2,
+                    "ctaFullWidth": true,
+                    "ctaWidth": 120,
+                    "height": 48
+                  },
+                  "cornerRadius": {
+                    "bottomLeft": 12,
+                    "bottomRight": 12,
+                    "topLeft": 12,
+                    "topRight": 12
+                  },
+                  "margin": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                  },
+                  "text": {
+                    "color": "#FFFFFF",
+                    "fontDecoration": [
+                      "bold"
+                    ],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 15
+                  }
+                },
+                "priceLabel": {
+                  "textStyle": {
+                    "color": "#000000",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 18,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                },
+                "subtitleText": {
+                  "textStyle": {
+                    "color": "#666666",
+                    "fontDecoration": [],
+                    "fontFamily": "Helvetica",
+                    "fontSize": 14,
+                    "margin": {
+                      "bottom": 4,
+                      "left": 4,
+                      "right": 4,
+                      "top": 4
+                    },
+                    "textAlign": "center"
+                  }
+                }
+              },
+              "subText": "le lo bhai",
+              "tNcCta": "Know more to claim",
+              "termsNConditions": ""
+            }
+          ],
+          "sliceMedia": "https://appstorysmediabucketdev.s3.ap-south-1.amazonaws.com/wheel_slices/DXB-Website-Photos-v1-57.png",
+          "styling": {
+            "wheelStyling": {
+              "color": {
+                "background": "#F97316",
+                "stroke": "#F97316"
+              },
+              "cornerRadius": {
+                "bottomLeft": 0,
+                "bottomRight": 0,
+                "topLeft": 0,
+                "topRight": 0
+              },
+              "image": {
+                "cornerRadius": {
+                  "bottomLeft": 12,
+                  "bottomRight": 12,
+                  "topLeft": 12,
+                  "topRight": 12
+                },
+                "rotation": 0
+              },
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "priceLabel": {
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textStyle": {
+                  "color": "#FFFFFF",
+                  "fontSize": 12
+                }
+              },
+              "strokeWidth": 2
+            }
+          },
+          "weight": 50
+        }
+      ],
+      "spinButtonText": "Spin Now",
+      "styling": {
+        "rewardConfiguration": {
+          "backdropColor": "#000000ff",
+          "confetti": {
+            "color": {
+              "cross": "",
+              "fill": "",
+              "stroke": ""
+            },
+            "image": "",
+            "selectedStyle": "basic"
+          },
+          "crossButton": {
+            "alignment": "right",
+            "color": {
+              "cross": "#FFFFFF",
+              "fill": "#000000",
+              "stroke": "#FFFFFF"
+            },
+            "enabled": true,
+            "image": "",
+            "margin": {
+              "bottom": 4,
+              "left": 4,
+              "right": -12,
+              "top": -12
+            },
+            "selectedStyle": "cross4",
+            "size": 30
+          },
+          "subtitle": {
+            "textStyle": {
+              "color": "#FE6B35",
+              "fontDecoration": [],
+              "fontFamily": "Helvetica",
+              "fontSize": 14,
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "textAlign": "center"
+            }
+          },
+          "title": {
+            "textStyle": {
+              "color": "#FE6B35",
+              "fontDecoration": [],
+              "fontFamily": "Helvetica",
+              "fontSize": 18,
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "textAlign": "center"
+            }
+          }
+        },
+        "spinTheWheel": {
+          "crossButton": {
+            "alignment": "center",
+            "color": {
+              "cross": "#FFFFFF",
+              "fill": "#000000",
+              "stroke": "#FFFFFF"
+            },
+            "enabled": true,
+            "image": "",
+            "margin": {
+              "bottom": 4,
+              "left": 4,
+              "right": 4,
+              "top": 4
+            },
+            "selectedStyle": "cross1",
+            "size": 30
+          },
+          "visualTextCommunication": {
+            "availableSpinText": {
+              "textStyle": {
+                "color": "#000000",
+                "fontDecoration": [],
+                "fontFamily": "Arial",
+                "fontSize": 12,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textAlign": "center"
+              }
+            },
+            "backdropColor": "#000000",
+            "backdropOpacity": 70,
+            "spinButton": {
+              "container": {
+                "alignment": "center",
+                "backgroundColor": "#FFB545",
+                "borderColor": "#FFB545",
+                "borderWidth": 2,
+                "cornerRadius": {
+                  "bottomLeft": 12,
+                  "bottomRight": 12,
+                  "topLeft": 12,
+                  "topRight": 12
+                },
+                "fullWidth": false,
+                "height": 50,
+                "width": 120
+              },
+              "margin": {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4
+              },
+              "text": {
+                "color": "#FFFFFF",
+                "fontDecoration": [],
+                "fontFamily": "Arial",
+                "fontSize": 12,
+                "fontStyle": "normal",
+                "fontWeight": "bold"
+              }
+            },
+            "subtitle": {
+              "textStyle": {
+                "color": "#E5E7EB",
+                "fontDecoration": [],
+                "fontFamily": "Helvetica",
+                "fontSize": 11,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textAlign": "center"
+              }
+            },
+            "title": {
+              "textStyle": {
+                "color": "#FFB545",
+                "fontDecoration": [],
+                "fontFamily": "Helvetica",
+                "fontSize": 18,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "margin": {
+                  "bottom": 4,
+                  "left": 4,
+                  "right": 4,
+                  "top": 4
+                },
+                "textAlign": "center"
+              }
+            }
+          },
+          "wheelConfiguration": {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4
+          }
+        }
+      }
+    },
+    "display_trigger": true,
+    "id": "14a82c4e-4f3c-4b4c-9d53-5457415a6abd",
+    "isTesting": false,
+    "position": null,
+    "priority": 0,
+    "screen": "Suraj Home Screen iOS",
+    "trigger_event": ""
+  }
